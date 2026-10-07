@@ -1,4 +1,0 @@
-task_id,title,description,required_skills,priority,deadline,estimated_hours,status,assignee
-TASK-301,Fix payment gateway timeout in checkout API,Checkout API intermittently times out when calling the payment gateway; needs a Python fix with retries.,python;api;payments,urgent,2026-10-08,8,open,
-TASK-302,Refresh autumn lookbook banners,Update homepage banners for the Autumn 2026 collection.,figma;ui,normal,2026-10-20,6,open,
-TASK-290,Migrate product search to Elasticsearch,Search migration,python;elasticsearch,high,2026-10-30,30,in_progress,E-101

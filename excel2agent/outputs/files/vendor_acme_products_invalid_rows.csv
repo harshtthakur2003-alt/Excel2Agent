@@ -1,4 +1,0 @@
-_row,sku,product_name,price,_errors
-4,,Corduroy Overshirt,72,Missing SKU
-5,AC-504,,35,Missing product name
-7,,,15,Missing SKU; Missing product name

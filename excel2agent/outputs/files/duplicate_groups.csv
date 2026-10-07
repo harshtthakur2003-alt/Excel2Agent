@@ -1,5 +1,0 @@
-confidence,score,skus,products,matching_fields,reason,group
-Definite + High,1.0,"TS-1001, ts-1001, TS-2001","Classic Cotton T-Shirt - Black - M | Classic Cotton T-Shirt Black Medium | Classic Cotton Tshirt, Black, Medium","brand, color, price, price≈, product_name~, size, sku","Exact SKU match (TS-1001); name similarity 1.00; same brand, color, size",G1
-Definite,1.0,"JK-4001, JK-4001",Quilted Puffer Jacket Olive | Quilted Puffer Jacket Olive,"brand, color, price, product_name, size, sku",Exact SKU match (JK-4001),G2
-High,1.0,"HD-3001, HD-3007",Heavyweight Pullover Hoodie Grey | Heavyweight Pull-over Hoodie (Grey),"brand, color, price≈, product_name~, size","name similarity 1.00; same brand, color, size",G3
-High,1.0,"BT-5001, BT-5101","Leather Chelsea Boots Brown 42 | Chelsea Boots Leather, Brown, EU 42","brand, color, price≈, product_name~, size","name similarity 1.00; same brand, color, size",G4
