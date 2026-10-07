@@ -1,0 +1,9 @@
+{
+  "product": {
+    "product_name": "Wool Blend Overcoat",
+    "category": "Outerwear",
+    "attributes": ["single-breasted", "notch lapel", "two flap pockets", "knee length"],
+    "color": "camel",
+    "target_audience": "men who commute in cold cities"
+  }
+}

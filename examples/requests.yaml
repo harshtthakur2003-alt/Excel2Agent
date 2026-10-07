@@ -1,0 +1,117 @@
+# Example requests used by scripts/run_examples.py and the test-suite.
+# The first case of every workflow is the exact Test_Request from the Excel "Test_Questions" sheet.
+# A case may have several turns (follow-up answers), attachments, and environment overrides
+# (e.g. to simulate an API outage).
+
+- id: WF001-excel-test
+  workflow: WF001
+  turns: [{request: "Which products need restocking?", expect: completed}]
+- id: WF001-custom-threshold
+  workflow: WF001
+  turns: [{request: "Check today's inventory and identify products below 20 units that need restocking.", expect: completed}]
+
+- id: WF002-excel-test
+  workflow: WF002
+  turns: [{request: "Find products where vendor price differs by more than 10%.", expect: completed}]
+- id: WF002-custom-tolerance
+  workflow: WF002
+  turns: [{request: "Validate our product prices against the vendor list using a 15% tolerance.", expect: completed}]
+
+- id: WF003-excel-test
+  workflow: WF003
+  turns: [{request: "Process this vendor spreadsheet and show invalid rows.",
+           attach: [data/vendor_files/vendor_acme_products.xlsx], expect: completed}]
+- id: WF003-no-file-attached
+  workflow: WF003
+  turns: [{request: "Process this vendor spreadsheet and show invalid rows.", expect: needs_input}]
+- id: WF003-csv-different-headers
+  workflow: WF003
+  turns: [{request: "Process this vendor file and give me the cleaned dataset.",
+           attach: [data/vendor_files/vendor_globex_products.csv], expect: completed}]
+- id: WF003-error-unrecognised-format
+  workflow: WF003
+  turns: [{request: "Process this vendor spreadsheet and show invalid rows.",
+           attach: [data/vendor_files/vendor_bad_format.csv], expect: failed}]
+
+- id: WF004-excel-test-no-product
+  workflow: WF004
+  turns: [{request: "Generate SEO content for this product.", expect: needs_input}]
+- id: WF004-excel-test-with-product
+  workflow: WF004
+  turns: [{request: "Generate SEO content for this product.",
+           attach: [examples/attachments/product_wool_coat.json], expect: completed}]
+- id: WF004-text-only-followup
+  workflow: WF004
+  turns:
+    - {request: "Generate SEO content for this product.", expect: needs_input}
+    - {request: "name: Silk Scarf; category: Accessories; colour: emerald; features: hand-rolled edges, 90x90 cm", expect: completed}
+- id: WF004-inline-product
+  workflow: WF004
+  turns: [{request: "Write a product description, SEO title and meta description for the Leather Chelsea Boots.",
+           attach: [examples/attachments/product_chelsea_boots.json], expect: completed}]
+
+- id: WF005-excel-test
+  workflow: WF005
+  turns: [{request: "Where is order ORD-1001?", expect: completed}]
+- id: WF005-not-found-then-email
+  workflow: WF005
+  turns:
+    - {request: "Where is order ORD-9999?", expect: needs_input}
+    - {request: "Try priya.sharma@example.com instead", expect: completed}
+- id: WF005-processing-order
+  workflow: WF005
+  turns: [{request: "What's the status of ORD-1002?", expect: completed}]
+- id: WF005-api-outage-retry
+  workflow: WF005
+  env: {SIMULATE_API_FAILURE: "order_api:2"}
+  turns: [{request: "Where is order ORD-1003?", expect: completed}]
+- id: WF005-api-down
+  workflow: WF005
+  env: {SIMULATE_API_FAILURE: "order_api"}
+  turns: [{request: "Where is order ORD-1001?", expect: failed}]
+
+- id: WF006-excel-test
+  workflow: WF006
+  turns: [{request: "Find likely duplicate products in the catalog.", expect: completed}]
+
+- id: WF007-excel-test-then-followup
+  workflow: WF007
+  turns:
+    - {request: "Create a campaign brief for the new collection.", expect: needs_input}
+    - {request: "Goal: drive launch sales of the autumn range, running 2026-11-01 to 2026-11-30, audience young professionals, promotion 15% off first order", expect: completed}
+- id: WF007-named-products
+  workflow: WF007
+  turns: [{request: "Create a campaign brief for SKU-1002 and SKU-1008. Goal: grow repeat purchases, 2026-11-10 to 2026-11-24", expect: completed}]
+- id: WF007-invalid-dates
+  workflow: WF007
+  turns: [{request: "Create a campaign brief. Goal: clear winter stock, from 2026-12-20 to 2026-12-01", expect: needs_input}]
+
+- id: WF008-excel-test
+  workflow: WF008
+  turns: [{request: "Classify these keywords and map them to pages.", expect: completed}]
+
+- id: WF009-excel-test
+  workflow: WF009
+  turns: [{request: "Assign this urgent task to the best available developer.", expect: completed}]
+- id: WF009-described-task
+  workflow: WF009
+  turns: [{request: "Assign a React and CSS product filter UI task (12 hours) to a developer by 2026-10-15", expect: completed}]
+- id: WF009-escalation
+  workflow: WF009
+  turns: [{request: "Assign a Kubernetes and Go migration task (40 hours) to a developer by 2026-10-10", expect: escalated}]
+
+- id: WF010-excel-test
+  workflow: WF010
+  turns: [{request: "Which workflows are failing most often?", expect: completed}]
+- id: WF010-custom-threshold
+  workflow: WF010
+  turns: [{request: "Give me a workflow performance report and flag anything failing more than 5%.", expect: completed}]
+
+- id: out-of-scope
+  workflow: null
+  turns: [{request: "What's the weather in Paris tomorrow?", expect: no_match}]
+
+# Runs last: analyses the agent's OWN execution log written while running the cases above.
+- id: WF010-live-agent-logs
+  workflow: WF010
+  turns: [{request: "Show a performance report of this agent's own live runs.", expect: completed}]

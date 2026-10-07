@@ -1,0 +1,35 @@
+# Paste under `workflows:` in config/workflow_bindings.yaml (indent by 2 spaces),
+# after adding this row to the Workflows sheet of the Excel file:
+#
+# WF011 | Category Stock Summary | User asks for stock totals by product category |
+#   Product inventory CSV; low-stock category threshold |
+#   Load inventory → aggregate stock by category → flag low-stock categories → generate category summary |
+#   Flag a category when its total stock is below 50 units | CSV reader; calculator |
+#   Stock per category with low-stock flags
+#
+# No Python changes are needed: every tool below already exists.
+WF011:
+  keywords: [category, categories, stock totals, summary]
+  settings: {category_threshold: 50}
+  steps:
+    - tool: load_table                      # Load inventory
+      args: {path: data/inventory.csv}
+      output: inventory
+    - tool: aggregate                       # Aggregate stock by category
+      args: {rows: $data.inventory, group_by: [category],
+             metrics: {total_stock: {op: sum, field: current_stock}, products: {op: count}}}
+      output: by_category
+    - tool: compute_columns                 # Flag low-stock categories
+      args: {rows: $data.by_category, variables: {limit: $settings.category_threshold},
+             columns: {low_stock: total_stock < limit}}
+      output: flagged
+    - tool: filter_rows                     # Generate category summary
+      args: {rows: $data.flagged, condition: low_stock, label: categories}
+      output: low
+  report:
+    title: Category stock summary
+    vars: {low: $data.low}
+    computed: {n: len(low)}
+    summary: "{n} category(ies) below the threshold."
+    tables:
+      - {title: Stock by category, rows: $data.flagged, columns: [category, products, total_stock, low_stock]}
