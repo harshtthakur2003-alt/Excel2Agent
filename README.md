@@ -1,5 +1,5 @@
 # Excel2Agent
-
+   **Live demo:** "https://excel2agent-nbwsqkpzff52goi8xwg843.streamlit.app"
 **Turn Excel workflows into AI agents that think, act and report.**
 
 Excel2Agent turns the business workflows written in an Excel sheet into a working AI agent. Ask in plain English
