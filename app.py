@@ -6,6 +6,7 @@ routing reasoning, executed steps with decisions, final result).
 from __future__ import annotations
 
 import json
+import os
 import tempfile
 from pathlib import Path
 
@@ -19,6 +20,14 @@ from agent.attachments import load_attachments
 from agent.render import to_markdown
 
 ROOT = Path(__file__).resolve().parent
+
+# Streamlit Cloud: copy secrets (OPENAI_API_KEY, OPENAI_BASE_URL, OPENAI_MODEL) into environment variables
+try:
+    for _k, _v in st.secrets.items():
+        if isinstance(_v, str):
+            os.environ.setdefault(_k, _v)
+except Exception:  # no secrets configured (e.g. running locally with .env)
+    pass
 st.set_page_config(page_title="Excel2Agent", page_icon="⚙️", layout="wide")
 
 
