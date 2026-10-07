@@ -1,0 +1,63 @@
+[
+  {
+    "order_id": "ORD-1001",
+    "customer_email": "priya.sharma@example.com",
+    "order_date": "2026-09-28",
+    "status": "Shipped",
+    "items": [
+      {
+        "sku": "SKU-1001",
+        "name": "Merino Wool Crew Sweater",
+        "qty": 1
+      },
+      {
+        "sku": "SKU-1007",
+        "name": "Cashmere Beanie",
+        "qty": 2
+      }
+    ],
+    "total": 179.0
+  },
+  {
+    "order_id": "ORD-1002",
+    "customer_email": "rahul.verma@example.com",
+    "order_date": "2026-10-03",
+    "status": "Processing",
+    "items": [
+      {
+        "sku": "SKU-1004",
+        "name": "Leather Chelsea Boots",
+        "qty": 1
+      }
+    ],
+    "total": 149.0
+  },
+  {
+    "order_id": "ORD-1003",
+    "customer_email": "priya.sharma@example.com",
+    "order_date": "2026-09-12",
+    "status": "Delivered",
+    "items": [
+      {
+        "sku": "SKU-1002",
+        "name": "Organic Cotton T-Shirt",
+        "qty": 3
+      }
+    ],
+    "total": 72.0
+  },
+  {
+    "order_id": "ORD-1004",
+    "customer_email": "anita.k@example.com",
+    "order_date": "2026-09-30",
+    "status": "Cancelled",
+    "items": [
+      {
+        "sku": "SKU-1010",
+        "name": "Running Sneakers",
+        "qty": 1
+      }
+    ],
+    "total": 110.0
+  }
+]

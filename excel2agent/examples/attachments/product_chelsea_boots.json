@@ -1,0 +1,10 @@
+{
+  "product": {
+    "product_name": "Leather Chelsea Boots",
+    "category": "Footwear",
+    "attributes": ["elastic side panels", "pull tab", "stacked heel", "Goodyear-welted sole"],
+    "material": "full-grain leather",
+    "color": "brown",
+    "target_audience": "men looking for versatile smart-casual boots"
+  }
+}

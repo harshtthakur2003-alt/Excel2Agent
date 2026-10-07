@@ -1,0 +1,23 @@
+keyword,monthly_searches,intent,category,priority,target_page,intent_reason
+buy merino wool sweater,2400,transactional,Knitwear,High,/collections/knitwear,rule: contains 'buy'
+how to wash merino wool,5400,informational,Knitwear,Medium,/blog/knitwear-care-guide,rule: contains 'how'
+best puffer jacket 2026,8100,commercial,Outerwear,High,/collections/outerwear,rule: contains 'best'
+puffer jacket vs parka,1900,commercial,Outerwear,Medium,/collections/outerwear,rule: contains 'vs'
+chelsea boots sale,3600,transactional,Footwear,High,/collections/footwear,rule: contains 'sale'
+cheap chelsea boots men,1300,transactional,Footwear,High,/collections/footwear,rule: contains 'cheap'
+how to style chelsea boots,4400,informational,Footwear,Medium,/blog/footwear-style-guide,rule: contains 'how'
+northline store login,900,navigational,General / Brand,Low,/account/login,rule: contains 'northline'
+northline order tracking,1200,navigational,General / Brand,Low,/pages/order-tracking,rule: contains 'northline'
+organic cotton t-shirt price,1000,transactional,Tops,High,/collections/tops,rule: contains 'price'
+what is organic cotton,2900,informational,Tops,Medium,/blog/fabric-guide,rule: contains 'what'
+silk scarf ways to tie,3300,informational,Accessories,Medium,/blog/accessories-styling,rule: contains 'ways'
+silk scarf discount code,700,transactional,Accessories,Medium,/collections/accessories,rule: contains 'discount'
+best running sneakers for flat feet,6600,commercial,Footwear,High,/collections/footwear,rule: contains 'best'
+running sneakers buy online,2900,transactional,Footwear,High,/collections/footwear,rule: contains 'buy'
+cashmere beanie review,880,commercial,Accessories,Medium,/collections/accessories,rule: contains 'review'
+canvas tote bag,4400,commercial,Accessories,High,/collections/accessories,rule: bare product term (shopping research)
+northline returns policy,1600,navigational,General / Brand,Medium,/pages/returns-policy,rule: contains 'northline'
+linen shirt vs cotton shirt,1500,commercial,Tops,Medium,/collections/tops,rule: contains 'vs'
+order linen button down shirt,600,transactional,Tops,Medium,/collections/tops,rule: contains 'order'
+wool overcoat men,3900,commercial,Outerwear,High,/collections/outerwear,rule: bare product term (shopping research)
+top rated wool overcoats,1700,commercial,Outerwear,Medium,/collections/outerwear,rule: contains 'top'

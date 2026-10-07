@@ -1,0 +1,13 @@
+sku,product_name,category,current_stock,minimum_stock,case_pack,supplier
+SKU-1001,Merino Wool Crew Sweater,Knitwear,4,20,6,WoolWorks Ltd
+SKU-1002,Organic Cotton T-Shirt,Tops,120,50,12,GreenThreads
+SKU-1003,Slim Fit Chino Trousers,Bottoms,18,25,6,UrbanTailor
+SKU-1004,Leather Chelsea Boots,Footwear,0,10,2,StepRight
+SKU-1005,Quilted Puffer Jacket,Outerwear,30,15,4,NorthPeak
+SKU-1006,Linen Button-Down Shirt,Tops,15,15,6,GreenThreads
+SKU-1007,Cashmere Beanie,Accessories,7,12,10,WoolWorks Ltd
+SKU-1008,Canvas Tote Bag,Accessories,64,30,10,BagCo
+SKU-1009,Denim Trucker Jacket,Outerwear,9,10,4,UrbanTailor
+SKU-1010,Running Sneakers,Footwear,42,20,2,StepRight
+SKU-1011,Silk Scarf,Accessories,25,8,5,SilkRoad Co
+SKU-1012,Wool Blend Overcoat,Outerwear,3,8,2,NorthPeak

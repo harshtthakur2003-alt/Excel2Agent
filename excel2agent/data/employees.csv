@@ -1,0 +1,9 @@
+employee_id,name,role,skills,current_workload_hours,weekly_capacity_hours,on_leave,seniority
+E-101,Aarav Mehta,Developer,python;api;payments;postgresql,30,40,no,senior
+E-102,Sneha Iyer,Developer,python;api;django;payments,38,40,no,mid
+E-103,Rohan Das,Developer,javascript;react;css;api,20,40,no,mid
+E-104,Meera Nair,Developer,python;api;payments;aws,10,40,yes,senior
+E-105,Kabir Singh,Developer,python;data pipelines;sql,12,40,no,junior
+E-106,Isha Kapoor,Designer,figma;ui;branding,15,40,no,mid
+E-107,Vikram Rao,Data Analyst,sql;python;tableau,22,40,no,mid
+E-108,Neha Joshi,Marketing,seo;copywriting;campaigns,25,40,no,senior
